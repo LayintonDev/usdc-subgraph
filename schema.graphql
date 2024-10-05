@@ -1,15 +1,9 @@
 type User @entity{
 id:ID!
 balance:BigInt!
-usdcToken: UsdcToken!
-
 }
 
-type UsdcToken @entity{
-id:ID!
-users:[User!]! @derivedFrom(field: "usdcToken")
-balance:BigInt!
-}
+
 
 type Approval @entity(immutable: true) {
   id: Bytes!
